@@ -1,0 +1,14 @@
+{
+	"name": "Big Brother",
+	"icons": [
+		{
+			"src": "icon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+  "start_url": "../",
+	"display": "standalone",
+	"background_color": "#181614",
+	"theme_color": "#C5603E"
+}
