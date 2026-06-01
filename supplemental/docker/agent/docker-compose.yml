@@ -1,0 +1,24 @@
+# Specialized images available for Nvidia / Intel GPUs
+#
+# Docs: https://github.com/cyber-dev-skalovsi/big-brother/guide/agent-installation
+# Env vars: https://github.com/cyber-dev-skalovsi/big-brother/guide/environment-variables
+
+services:
+  BIGBROTHER-agent:
+    image: cyber-dev-skalovsi/big-brother-agent
+    container_name: BIGBROTHER-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./BIGBROTHER_agent_data:/var/lib/BIGBROTHER-agent
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # monitor other disks / partitions by mounting a folder in /extra-filesystems
+      # - /mnt/disk1/.BIGBROTHER:/extra-filesystems/disk1:ro
+    environment:
+      LISTEN: 45876
+      KEY: "<public key>"
+      HUB_URL: "<hub url>"
+      TOKEN: "<token>"
+    # healthcheck:
+    #   test: ['CMD', '/agent', 'health']
+    #   interval: 120s
