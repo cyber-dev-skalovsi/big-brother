@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "BIGBROTHER-agent.fullname" . }}
+  labels:
+    {{- include "BIGBROTHER-agent.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: agent
+      protocol: TCP
+      name: agent
+  selector:
+    {{- include "BIGBROTHER-agent.selectorLabels" . | nindent 4 }}

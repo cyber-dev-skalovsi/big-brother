@@ -1,0 +1,17 @@
+# Docs: https://github.com/cyber-dev-skalovsi/big-brother/guide/hub-installation
+# Env vars: https://github.com/cyber-dev-skalovsi/big-brother/guide/environment-variables
+
+services:
+  BIGBROTHER:
+    image: "cyber-dev-skalovsi/big-brother"
+    container_name: "BIGBROTHER"
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./bigbrother_data:/bigbrother_data
+    # healthcheck:
+    #   test: ['CMD', '/BIGBROTHER', 'health', '--url', 'http://localhost:8090']
+    #   interval: 120s
+    #   start_period: 10s
+    #   timeout: 5s

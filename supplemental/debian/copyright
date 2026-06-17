@@ -1,0 +1,8 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Big Brother
+Upstream-Contact: cyber-dev-skalovsi
+Source: https://github.com/cyber-dev-skalovsi/big-brother
+
+Files: *
+Copyright: 2026 cyber-dev-skalovsi
+License: MIT

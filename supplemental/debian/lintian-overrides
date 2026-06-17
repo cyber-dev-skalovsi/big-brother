@@ -1,0 +1,11 @@
+# No changelog in the repo at the moment. This would be good to fix
+bigbrother-agent: no-changelog
+# Current unable to fix these due to Goreleaser bug
+# https://github.com/goreleaser/goreleaser/issues/5487
+bigbrother-agent: no-debconf-config
+bigbrother-agent: postinst-uses-db-input
+# Needs to be fixed in Big Brother build
+bigbrother-agent: hardening-no-pie
+bigbrother-agent: hardening-no-relro
+# Maybe one day
+bigbrother-agent: no-manual-page

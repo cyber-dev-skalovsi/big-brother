@@ -1,0 +1,38 @@
+# Docs: https://github.com/cyber-dev-skalovsi/big-brother/guide/getting-started
+# Env vars: https://github.com/cyber-dev-skalovsi/big-brother/guide/environment-variables
+
+services:
+  BIGBROTHER:
+    image: cyber-dev-skalovsi/big-brother:latest
+    container_name: BIGBROTHER
+    restart: unless-stopped
+    environment:
+      APP_URL: http://localhost:8090
+    ports:
+      - 8090:8090
+    volumes:
+      - ./BIGBROTHER_data:/BIGBROTHER_data
+      - ./BIGBROTHER_socket:/BIGBROTHER_socket
+    # healthcheck:
+    #   test: ['CMD', '/BIGBROTHER', 'health', '--url', 'http://localhost:8090']
+    #   interval: 120s
+    #   start_period: 10s
+    #   timeout: 5s
+
+  BIGBROTHER-agent:
+    image: cyber-dev-skalovsi/big-brother-agent:latest
+    container_name: BIGBROTHER-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./BIGBROTHER_agent_data:/var/lib/BIGBROTHER-agent
+      - ./BIGBROTHER_socket:/BIGBROTHER_socket
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      LISTEN: /BIGBROTHER_socket/BIGBROTHER.sock
+      HUB_URL: http://localhost:8090
+      TOKEN: <token>
+      KEY: "<key>"
+    # healthcheck:
+    #   test: ['CMD', '/agent', 'health']
+    #   interval: 120s
