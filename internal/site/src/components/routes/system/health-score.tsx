@@ -16,7 +16,7 @@ const WEIGHTS = {
 }
 
 /** Usage percent (0-100) above which a metric starts costing health points. */
-const THRESHOLD = 60
+const THRESHOLD = 70
 
 function deduction(percent: number | undefined) {
 	if (!percent || percent <= THRESHOLD) {
