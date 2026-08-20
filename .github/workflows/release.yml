@@ -1,6 +1,7 @@
 name: Make release and binaries
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*"
