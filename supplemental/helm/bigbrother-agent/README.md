@@ -80,7 +80,7 @@ Essential parameters to configure:
 | `secret.sshKey` | `ssh-key` | Key name in the secret for the SSH public key |
 | `secret.tokenKey` | `token` | Key name in the secret for the authentication token |
 | `image.repository` | `cyber-dev-skalovsi/big-brother-agent` | Container image |
-| `image.tag` | Chart AppVersion (0.3.0) | Image version |
+| `image.tag` | Chart AppVersion (1.0.1) | Image version |
 | `hostNetwork` | `false` | Use host network for network monitoring |
 | `tolerations` | Allows all taints | Tolerations for running on tainted nodes |
 
@@ -385,7 +385,7 @@ helm upgrade bigbrother-agent ./bigbrother-agent \
 
 # Change image version
 helm upgrade bigbrother-agent ./bigbrother-agent \
-  --set image.tag="0.3.0"
+  --set image.tag="1.0.1"
 ```
 
 ### Restart All Agents
@@ -522,7 +522,7 @@ kubectl get secret bigbrother-agent -o jsonpath='{.data.ssh-key}' | base64 -d
 ## Chart Information
 
 - **Chart Version**: 0.1.0
-- **App Version**: 0.3.0
+- **App Version**: 1.0.1
 - **Kubernetes Version**: 1.19+
 - **Maintainer**: cyber-dev-skalovsi
 

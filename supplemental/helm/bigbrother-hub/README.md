@@ -47,7 +47,7 @@ Key configuration options in `values.yaml`:
 |-----------|---------|-------------|
 | `replicaCount` | `1` | Number of Big Brother Hub replicas |
 | `image.repository` | `cyber-dev-skalovsi/big-brother` | Container image repository |
-| `image.tag` | Chart AppVersion (0.3.0) | Container image tag |
+| `image.tag` | Chart AppVersion (1.0.1) | Container image tag |
 | `image.pullPolicy` | `IfNotPresent` | Image pull policy |
 | `service.port` | `8090` | Service port |
 | `persistentVolumeClaim.enabled` | `true` | Enable persistent volume |
@@ -169,7 +169,7 @@ tolerations:
 ```yaml
 replicaCount: 3
 image:
-  tag: "0.3.0"
+  tag: "1.0.1"
 service:
   type: LoadBalancer
 ingress:
@@ -330,7 +330,7 @@ By default, Big Brother Hub uses a PersistentVolumeClaim for data storage. Ensur
 ## Chart Information
 
 - **Chart Version**: 0.1.0
-- **App Version**: 0.3.0
+- **App Version**: 1.0.1
 - **Kubernetes Version**: 1.19+
 - **Maintainer**: cyber-dev-skalovsi
 
